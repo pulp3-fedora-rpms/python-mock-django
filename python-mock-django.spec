@@ -8,7 +8,10 @@ Summary:        UNKNOWN
 
 License:        Apache License 2.0
 URL:            http://github.com/dcramer/mock-django
-Source0:        https://files.pythonhosted.org/packages/source/m/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+# Upstream doesn't include runtests.py On PyPi
+# And they forgot to tag 0.6.10 on github
+#Source0:        https://files.pythonhosted.org/packages/source/m/%%{pypi_name}/%%{pypi_name}-%%{version}.tar.gz
+Source0:        https://github.com/dcramer/mock-django/tarball/1168d3255e0d67fbf74a9c71feaccbdafef59d21
 BuildArch:      noarch
  
 BuildRequires:  python3-devel
@@ -67,7 +70,8 @@ your virtualenv:
 
 
 %prep
-%autosetup -n %{pypi_name}-%{version}
+#%%autosetup -n %{pypi_name}-%{version}
+%autosetup -n dcramer-mock-django-1168d32
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
