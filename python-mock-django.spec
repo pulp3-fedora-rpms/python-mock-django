@@ -18,6 +18,9 @@ BuildRequires:  python3dist(nose)
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(unittest2)
 
+# Manually added dependencies so it builds successfully
+BuildRequires:  python3dist(runtests)
+
 %description
 mock-django
 ~~~~~~~~~~~
